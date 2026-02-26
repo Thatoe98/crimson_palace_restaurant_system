@@ -1,0 +1,9 @@
+Assumption,Value
+Period,2026-02-01 to 2026-04-30 (89 days)
+Opening Hours,09:00 to 23:00 (14 hours/day)
+Traffic Assumption,6 customers per hour (84 covers/day when open)
+Closures Included,"Union Day (12-13 Feb), Chinese New Year (16-17 Feb), Peasants’ Day + Full Moon of Tabaung (2 Mar), Armed Forces Day (27 Mar), Thingyan holiday period (11-19 Apr), Full Moon Day of Kasong (30 Apr)"
+Holiday Sources (URLs),https://www.scbmm.com/en/about-us/national-holiday ; https://myanmar.gov.mm/upcoming-holidays ; https://www.timeanddate.com/holidays/myanmar/2026
+Fixed Monthly Costs (MMK),"Rent 5,000,000; Staff Salaries (14) 8,540,000; Electricity 950,000; Diesel 2,500,000; Marketing 1,200,000; Maintenance 700,000; Consumables 300,000"
+Card Mix / Fees,"35% card sales, merchant fee 2% on card portion; 65% cash"
+Bank Charges,"MMK 10,000 each Monday (synthetic)"

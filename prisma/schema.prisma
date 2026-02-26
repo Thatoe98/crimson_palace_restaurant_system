@@ -1,0 +1,357 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum MenuType {
+  FOOD
+  DRINK
+}
+
+enum OpenStatus {
+  OPEN
+  CLOSED
+}
+
+enum AlertAction {
+  REORDER
+  SPOILAGE_WRITE_OFF
+  USE_FAST
+  DISCOUNT
+}
+
+enum OrderSource {
+  QR
+  POS
+}
+
+enum OrderStatus {
+  OPEN
+  SENT_TO_KITCHEN
+  IN_PREP
+  READY
+  SERVED
+  CANCELLED
+  CLOSED
+}
+
+model Uom {
+  code                      String                     @id @db.VarChar(20)
+  name                      String                     @db.VarChar(50)
+  ingredients               Ingredient[]
+  menuItemRecipes           MenuItemRecipe[]
+  ingredientDailyUsages     IngredientDailyUsage[]
+  purchaseOrders            PurchaseOrder[]
+  dailyItemIngredientUsages DailyItemIngredientUsage[]
+  inventoryDailyStatuses    InventoryDailyStatus[]
+}
+
+model IngredientCategory {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique @db.VarChar(60)
+  ingredients Ingredient[]
+}
+
+model Ingredient {
+  id                     String                   @id @db.VarChar(80)
+  categoryId             Int
+  uomCode                String                   @db.VarChar(20)
+  avgDailyUsage          Decimal                  @db.Decimal(14, 4)
+  leadTimeDays           Int
+  safetyStockDays        Int
+  reorderPoint           Decimal                  @db.Decimal(14, 4)
+  targetStockDays        Int
+  targetStockQty         Decimal                  @db.Decimal(14, 4)
+  shelfLifeDays          Int
+  expiryWarnDays         Int
+  supplierRiskNote       String?                  @db.Text
+
+  category               IngredientCategory       @relation(fields: [categoryId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  uom                    Uom                      @relation(fields: [uomCode], references: [code], onDelete: Restrict, onUpdate: Cascade)
+  recipes                MenuItemRecipe[]
+  dailyUsages            IngredientDailyUsage[]
+  inventoryDailyStatuses InventoryDailyStatus[]
+  inventoryAlerts        InventoryAlert[]
+  purchaseOrders         PurchaseOrder[]
+  dailyItemUsages        DailyItemIngredientUsage[]
+
+  @@index([categoryId])
+  @@index([uomCode])
+}
+
+model MenuSection {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar(120)
+  menuItems MenuItem[]
+}
+
+model StorageLocation {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar(60)
+  menuItems MenuItem[]
+}
+
+model PrepStation {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar(60)
+  menuItems MenuItem[]
+}
+
+model MenuItem {
+  id                String              @id @db.VarChar(10)
+  menuCode          String              @unique @db.VarChar(20)
+  name              String              @db.VarChar(255)
+  menuType          MenuType
+  sectionId         Int
+  unitSold          String              @db.VarChar(40)
+  portionSize       String?             @db.VarChar(80)
+  salesPriceMmk     Decimal             @db.Decimal(14, 2)
+  supplierCostMmk   Decimal             @db.Decimal(14, 2)
+  targetCostPct     Decimal?            @db.Decimal(6, 3)
+  highValue         Boolean             @default(false)
+  highTheftRisk     Boolean             @default(false)
+  expiryTracking    Boolean             @default(false)
+  storageLocationId Int?
+  prepStationId     Int?
+  leadTimeDays      Int?
+  notes             String?             @db.Text
+  sourceUrl         String?             @db.Text
+  isActive          Boolean             @default(true)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+
+  section           MenuSection         @relation(fields: [sectionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  storageLocation   StorageLocation?    @relation(fields: [storageLocationId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  prepStation       PrepStation?        @relation(fields: [prepStationId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  recipes           MenuItemRecipe[]
+  dailyItemSales    DailyItemSale[]
+  orderItems        CustomerOrderItem[]
+
+  @@index([menuType])
+  @@index([sectionId])
+}
+
+model MenuItemRecipe {
+  menuItemId   String     @db.VarChar(10)
+  ingredientId String     @db.VarChar(80)
+  qtyPerUnit   Decimal    @db.Decimal(14, 4)
+  uomCode      String     @db.VarChar(20)
+  recipeNote   String?    @db.Text
+
+  menuItem     MenuItem   @relation(fields: [menuItemId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  uom          Uom        @relation(fields: [uomCode], references: [code], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([menuItemId, ingredientId])
+  @@index([ingredientId])
+}
+
+model PayrollRole {
+  role                      String  @id @db.VarChar(80)
+  headcount                 Int
+  monthlySalaryPerPersonMmk Decimal @db.Decimal(14, 2)
+  monthlyTotalMmk           Decimal @db.Decimal(14, 2)
+}
+
+model DailySummary {
+  businessDate             DateTime  @id @db.Date
+  dayName                  String    @db.VarChar(20)
+  openStatus               OpenStatus
+  covers                   Int?
+  netSalesMmk              Decimal   @db.Decimal(14, 2)
+  cogsMmk                  Decimal   @db.Decimal(14, 2)
+  grossProfitMmk           Decimal   @db.Decimal(14, 2)
+  rentMmk                  Decimal   @db.Decimal(14, 2)
+  waitersSalariesMmk       Decimal   @db.Decimal(14, 2)
+  chefsSalariesMmk         Decimal   @db.Decimal(14, 2)
+  otherStaffSalariesMmk    Decimal   @db.Decimal(14, 2)
+  electricityGridMmk       Decimal   @db.Decimal(14, 2)
+  generatorFuelMmk         Decimal   @db.Decimal(14, 2)
+  marketingSocialMmk       Decimal   @db.Decimal(14, 2)
+  maintenanceSanitationMmk Decimal   @db.Decimal(14, 2)
+  consumablesMmk           Decimal   @db.Decimal(14, 2)
+  fixedOpexTotalMmk        Decimal   @db.Decimal(14, 2)
+  cardFeesMmk              Decimal   @db.Decimal(14, 2)
+  bankChargesMmk           Decimal   @db.Decimal(14, 2)
+  totalOpexMmk             Decimal   @db.Decimal(14, 2)
+  operatingProfitMmk       Decimal   @db.Decimal(14, 2)
+  notes                    String?   @db.Text
+
+  dailyItemSales           DailyItemSale[]
+
+  @@index([openStatus])
+}
+
+model DailyItemSale {
+  id             BigInt     @id @default(autoincrement())
+  businessDate   DateTime   @db.Date
+  menuItemId     String     @db.VarChar(10)
+  qty            Decimal    @db.Decimal(14, 4)
+  unitPriceMmk   Decimal    @db.Decimal(14, 2)
+  unitCostMmk    Decimal    @db.Decimal(14, 2)
+  unitGpMmk      Decimal    @db.Decimal(14, 2)
+  salesMmk       Decimal    @db.Decimal(14, 2)
+  cogsMmk        Decimal    @db.Decimal(14, 2)
+  grossProfitMmk Decimal    @db.Decimal(14, 2)
+  unitCostPct    Decimal?   @db.Decimal(8, 4)
+
+  menuItem       MenuItem        @relation(fields: [menuItemId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  dailySummary   DailySummary    @relation(fields: [businessDate], references: [businessDate], onDelete: Cascade, onUpdate: Cascade)
+  ingredientUsages DailyItemIngredientUsage[]
+
+  @@unique([businessDate, menuItemId])
+  @@index([businessDate])
+  @@index([menuItemId])
+}
+
+model DailyItemIngredientUsage {
+  dailyItemSaleId BigInt
+  ingredientId    String    @db.VarChar(80)
+  qtyUsed         Decimal   @db.Decimal(14, 4)
+  uomCode         String    @db.VarChar(20)
+
+  dailyItemSale   DailyItemSale @relation(fields: [dailyItemSaleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ingredient      Ingredient    @relation(fields: [ingredientId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  uom             Uom           @relation(fields: [uomCode], references: [code], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([dailyItemSaleId, ingredientId])
+  @@index([ingredientId])
+}
+
+model IngredientDailyUsage {
+  businessDate DateTime   @db.Date
+  ingredientId String     @db.VarChar(80)
+  uomCode      String     @db.VarChar(20)
+  totalQty     Decimal    @db.Decimal(14, 4)
+
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  uom          Uom        @relation(fields: [uomCode], references: [code], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([businessDate, ingredientId])
+  @@index([businessDate])
+}
+
+model InventoryDailyStatus {
+  businessDate          DateTime   @db.Date
+  ingredientId          String     @db.VarChar(80)
+  uomCode               String     @db.VarChar(20)
+  usageToday            Decimal    @db.Decimal(14, 4)
+  wastageToday          Decimal    @db.Decimal(14, 4)
+  closingOnHand         Decimal    @db.Decimal(14, 4)
+  onOrderQty            Decimal    @db.Decimal(14, 4)
+  reorderPoint          Decimal    @db.Decimal(14, 4)
+  reorderFlag           Boolean    @default(false)
+  earliestExpiryDate    DateTime?  @db.Date
+  qtyExpiringWithinWarn Decimal    @db.Decimal(14, 4)
+  expiryWarnDays        Int?
+  expiryFlag            Boolean    @default(false)
+  suggestedActionRaw    String?    @db.VarChar(120)
+
+  ingredient            Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  uom                   Uom        @relation(fields: [uomCode], references: [code], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([businessDate, ingredientId])
+  @@index([businessDate])
+  @@index([reorderFlag])
+  @@index([expiryFlag])
+}
+
+model InventoryAlert {
+  id                 BigInt               @id @default(autoincrement())
+  businessDate       DateTime             @db.Date
+  ingredientId       String               @db.VarChar(80)
+  closingOnHand      Decimal              @db.Decimal(14, 4)
+  onOrderQty         Decimal              @db.Decimal(14, 4)
+  reorderPoint       Decimal              @db.Decimal(14, 4)
+  qtyExpiringSoon    Decimal              @db.Decimal(14, 4)
+  earliestExpiryDate DateTime?            @db.Date
+  suggestedActionRaw String               @db.VarChar(180)
+
+  ingredient         Ingredient           @relation(fields: [ingredientId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  actions            InventoryAlertAction[]
+
+  @@unique([businessDate, ingredientId, suggestedActionRaw])
+  @@index([businessDate])
+  @@index([ingredientId])
+}
+
+model InventoryAlertAction {
+  alertId BigInt
+  action  AlertAction
+
+  alert   InventoryAlert @relation(fields: [alertId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@id([alertId, action])
+}
+
+model PurchaseOrder {
+  poId         String     @id @db.VarChar(80)
+  orderedDate  DateTime   @db.Date
+  ingredientId String     @db.VarChar(80)
+  qty          Decimal    @db.Decimal(14, 4)
+  uomCode      String     @db.VarChar(20)
+  eta          DateTime?  @db.Date
+  reason       String?    @db.VarChar(80)
+
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  uom          Uom        @relation(fields: [uomCode], references: [code], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([orderedDate])
+  @@index([ingredientId])
+}
+
+model DiningTable {
+  id       String          @id @db.VarChar(20)
+  label    String          @unique @db.VarChar(40)
+  capacity Int
+  qrSlug   String          @unique @db.VarChar(80)
+  isActive Boolean         @default(true)
+  orders   CustomerOrder[]
+}
+
+model CustomerOrder {
+  id                String              @id @default(cuid())
+  orderNumber       String              @unique @db.VarChar(40)
+  tableId           String              @db.VarChar(20)
+  source            OrderSource
+  status            OrderStatus
+  orderedAt         DateTime
+  subtotalMmk       Decimal             @db.Decimal(14, 2)
+  serviceChargeMmk  Decimal             @db.Decimal(14, 2) @default(0)
+  taxMmk            Decimal             @db.Decimal(14, 2) @default(0)
+  totalMmk          Decimal             @db.Decimal(14, 2)
+  notes             String?             @db.Text
+
+  table             DiningTable         @relation(fields: [tableId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  items             CustomerOrderItem[]
+
+  @@index([orderedAt])
+  @@index([status])
+  @@index([tableId])
+}
+
+model CustomerOrderItem {
+  id              String      @id @default(cuid())
+  orderId         String
+  menuItemId      String      @db.VarChar(10)
+  qty             Decimal     @db.Decimal(14, 4)
+  unitPriceMmk    Decimal     @db.Decimal(14, 2)
+  lineTotalMmk    Decimal     @db.Decimal(14, 2)
+  kitchenStatus   OrderStatus @default(SENT_TO_KITCHEN)
+  sentToKitchenAt DateTime?
+  readyAt         DateTime?
+  servedAt        DateTime?
+  notes           String?     @db.Text
+
+  order           CustomerOrder @relation(fields: [orderId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  menuItem        MenuItem      @relation(fields: [menuItemId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([orderId])
+  @@index([menuItemId])
+  @@index([kitchenStatus])
+}

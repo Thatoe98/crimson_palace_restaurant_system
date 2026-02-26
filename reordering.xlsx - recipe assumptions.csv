@@ -1,0 +1,219 @@
+Item ID,Item Name,Section,Ingredient,Qty_per_Unit,UOM,Recipe_Note
+F-001,"Margherita (Tomato Sauce, Cheese & Basil)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-001,"Margherita (Tomato Sauce, Cheese & Basil)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-001,"Margherita (Tomato Sauce, Cheese & Basil)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-001,"Margherita (Tomato Sauce, Cheese & Basil)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-001,"Margherita (Tomato Sauce, Cheese & Basil)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-001,"Margherita (Tomato Sauce, Cheese & Basil)","Pizza Grande (11"")",SauceOther_g,10,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",VegMix_g,120,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",Pesto_g,15,g,Assumed standard recipe for simulation
+F-002,"Mixed Veggie (Bell Pepper, Spinach, Onion, Tomato, Corn, Black Olive, Pesto)","Pizza Grande (11"")",Onion_g,20,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",WhiteSauce_g,80,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",Mushroom_g,140,g,Assumed standard recipe for simulation
+F-003,"White Mushroom (White Sauce, Mixed Mushroom, Rocket Salad)","Pizza Grande (11"")",VegMix_g,20,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",Chicken_g,110,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",Pesto_g,15,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",VegMix_g,40,g,Assumed standard recipe for simulation
+F-004,"Yan'kin House (Chicken, Pesto, Black Olive, Rocket Salad)","Pizza Grande (11"")",Onion_g,15,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",Pork_g,120,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",Parmesan_g,20,g,Assumed standard recipe for simulation
+F-005,"Mont Blanc (Pork Ham, Bacon, Parmesan, Rocket Salad)","Pizza Grande (11"")",VegMix_g,20,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",Anchovy_g,25,g,Assumed standard recipe for simulation
+F-006,"Anchovies (Italian Anchovie, Capers, Black Olive)","Pizza Grande (11"")",SauceOther_g,10,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",Garlic_g,4,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",Seafood_g,140,g,Assumed standard recipe for simulation
+F-007,"Seafood (Mixed Seafood, Pesto, Garlic, Black Olive)","Pizza Grande (11"")",Pesto_g,15,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Garlic_g,4,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Salmon_g,90,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Seafood_g,70,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Pesto_g,15,g,Assumed standard recipe for simulation
+F-008,"Hokkaido (Salmon, Prawn, Onion, Garlic, Pesto)","Pizza Grande (11"")",Onion_g,20,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",TomatoSauce_g,90,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",Garlic_g,3,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",Beef_g,110,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",VegMix_g,60,g,Assumed standard recipe for simulation
+F-009,"Buffalo Bill (Beef Tenderloin, Bell Pepper, Onion, Garlic, Rocket Salad)","Pizza Grande (11"")",Onion_g,20,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",Flour_g,200,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",OliveOil_g,8,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",Mozzarella_g,120,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",WhiteSauce_g,80,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",Garlic_g,2,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",Beef_g,90,g,Assumed standard recipe for simulation
+F-010,"Baby Face (White Sauce, Minced Beef, Black Olives, Rocket Salad)","Pizza Grande (11"")",VegMix_g,20,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",Flour_g,120,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",OliveOil_g,4.8,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",Mozzarella_g,72,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",TomatoSauce_g,54,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",Garlic_g,3.6,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",Onion_g,27,g,Assumed standard recipe for simulation
+F-011,"Olivia (Onion, Garlic & Black Olive)","Pizza Petite (7"")",VegMix_g,12,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",Flour_g,120,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",OliveOil_g,4.8,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",Mozzarella_g,72,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",TomatoSauce_g,54,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",Garlic_g,1.2,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",VegMix_g,72,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",Pesto_g,9,g,Assumed standard recipe for simulation
+F-012,"Mini Veggie (Mixed Veggie, Black Olive & Pesto)","Pizza Petite (7"")",Onion_g,12,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",Flour_g,120,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",OliveOil_g,4.8,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",Mozzarella_g,72,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",TomatoSauce_g,54,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",Garlic_g,1.2,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",Chicken_g,66,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",VegMix_g,36,g,Assumed standard recipe for simulation
+F-013,"Havana (Chicken, Corn, Coriander & Mixed Chillies)","Pizza Petite (7"")",Onion_g,6,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",Flour_g,120,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",OliveOil_g,4.8,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",Mozzarella_g,72,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",TomatoSauce_g,54,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",Garlic_g,3,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",Beef_g,60,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",Onion_g,12,g,Assumed standard recipe for simulation
+F-014,"Rio (Beef, Onion, Garlic, Black Pepper & Mixed Chillies)","Pizza Petite (7"")",SauceOther_g,6,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",Flour_g,120,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",OliveOil_g,4.8,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",Mozzarella_g,72,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",TomatoSauce_g,54,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",Garlic_g,3.6,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",Seafood_g,84,g,Assumed standard recipe for simulation
+F-015,"Mauritius (Mixed Seafood, Pesto, Garlic & Black Olive)","Pizza Petite (7"")",Pesto_g,9,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,Bread_g,90,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,OliveOil_g,10,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,Garlic_g,2,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,Onion_g,20,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,TomatoSauce_g,0,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,VegMix_g,40,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,Pesto_g,10,g,Assumed standard recipe for simulation
+F-016,"Greek Bruschetta (Ricotta, Tomato, Onion, Black Olive & Pesto)",Bruschetta,SauceOther_g,30,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,Bread_g,90,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,OliveOil_g,10,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,Garlic_g,2,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,Onion_g,20,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,TomatoSauce_g,0,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,VegMix_g,60,g,Assumed standard recipe for simulation
+F-017,"Yangon Eggplant Bruschetta (Eggplant, Tomato, Onion, Garlic, Coriander & Sesame Oil)",Bruschetta,SauceOther_g,5,g,Assumed standard recipe for simulation
+F-018,Cucumber & Sesame Oil,Pub Snacks,VegMix_g,150,g,Assumed standard recipe for simulation
+F-018,Cucumber & Sesame Oil,Pub Snacks,SauceOther_g,8,g,Assumed standard recipe for simulation
+F-019,Potato Fries,Pub Snacks,Potato_g,250,g,Assumed standard recipe for simulation
+F-019,Potato Fries,Pub Snacks,CookingOil_g,25,g,Assumed standard recipe for simulation
+F-019,Potato Fries,Pub Snacks,SauceOther_g,20,g,Assumed standard recipe for simulation
+F-020,Boneless Fried Chicken,Pub Snacks,Chicken_g,180,g,Assumed standard recipe for simulation
+F-020,Boneless Fried Chicken,Pub Snacks,Flour_g,20,g,Assumed standard recipe for simulation
+F-020,Boneless Fried Chicken,Pub Snacks,CookingOil_g,25,g,Assumed standard recipe for simulation
+F-020,Boneless Fried Chicken,Pub Snacks,SauceOther_g,15,g,Assumed standard recipe for simulation
+F-021,Chicken Wings,Pub Snacks,Chicken_g,300,g,Assumed standard recipe for simulation
+F-021,Chicken Wings,Pub Snacks,CookingOil_g,25,g,Assumed standard recipe for simulation
+F-021,Chicken Wings,Pub Snacks,SauceOther_g,30,g,Assumed standard recipe for simulation
+F-022,Dried Beef Jerky (Myanmar Style),Pub Snacks,Beef_g,80,g,Assumed standard recipe for simulation
+F-022,Dried Beef Jerky (Myanmar Style),Pub Snacks,SauceOther_g,5,g,Assumed standard recipe for simulation
+F-023,Smoked Pork Belly,Pub Snacks,Pork_g,140,g,Assumed standard recipe for simulation
+F-023,Smoked Pork Belly,Pub Snacks,SauceOther_g,10,g,Assumed standard recipe for simulation
+F-024,"Beirut (Hummus, Chicken Kofta, Pita & Condiments)",Signature Dishes,Chicken_g,150,g,Assumed standard recipe for simulation
+F-024,"Beirut (Hummus, Chicken Kofta, Pita & Condiments)",Signature Dishes,Pita_g,120,g,Assumed standard recipe for simulation
+F-024,"Beirut (Hummus, Chicken Kofta, Pita & Condiments)",Signature Dishes,SauceOther_g,180,g,Assumed standard recipe for simulation
+F-024,"Beirut (Hummus, Chicken Kofta, Pita & Condiments)",Signature Dishes,VegMix_g,40,g,Assumed standard recipe for simulation
+F-025,Beef Tenderloin & Gravy,Signature Dishes,Beef_g,200,g,Assumed standard recipe for simulation
+F-025,Beef Tenderloin & Gravy,Signature Dishes,Butter_g,10,g,Assumed standard recipe for simulation
+F-025,Beef Tenderloin & Gravy,Signature Dishes,SauceOther_g,120,g,Assumed standard recipe for simulation
+F-026,Salmon Salt & Pepper,Grilled Fish,Salmon_g,180,g,Assumed standard recipe for simulation
+F-026,Salmon Salt & Pepper,Grilled Fish,OliveOil_g,5,g,Assumed standard recipe for simulation
+F-026,Salmon Salt & Pepper,Grilled Fish,SauceOther_g,5,g,Assumed standard recipe for simulation
+F-027,"Fish and Chips (Fried Seabass, Fries, Pink Tartar Sauce)",House Specials,Seafood_g,200,g,Assumed standard recipe for simulation
+F-027,"Fish and Chips (Fried Seabass, Fries, Pink Tartar Sauce)",House Specials,Flour_g,40,g,Assumed standard recipe for simulation
+F-027,"Fish and Chips (Fried Seabass, Fries, Pink Tartar Sauce)",House Specials,CookingOil_g,35,g,Assumed standard recipe for simulation
+F-027,"Fish and Chips (Fried Seabass, Fries, Pink Tartar Sauce)",House Specials,Potato_g,200,g,Assumed standard recipe for simulation
+F-027,"Fish and Chips (Fried Seabass, Fries, Pink Tartar Sauce)",House Specials,SauceOther_g,40,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,Chicken_g,200,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,Flour_g,20,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,Egg_count,1,count,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,SauceOther_g,40,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,CookingOil_g,35,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,Potato_g,200,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,VegMix_g,60,g,Assumed standard recipe for simulation
+F-028,"Chicken Schnitzel II (Creamy Spinach, Fries, Pink Tartar Sauce)",House Specials,Cream_ml,60,ml,Assumed standard recipe for simulation
+F-029,"French Stew & Steamed Potato (Slow Cooked Beef Tongue, Red Wine Sauce)",House Specials,Beef_g,180,g,Assumed standard recipe for simulation
+F-029,"French Stew & Steamed Potato (Slow Cooked Beef Tongue, Red Wine Sauce)",House Specials,Wine_ml,60,ml,Assumed standard recipe for simulation
+F-029,"French Stew & Steamed Potato (Slow Cooked Beef Tongue, Red Wine Sauce)",House Specials,Potato_g,250,g,Assumed standard recipe for simulation
+F-029,"French Stew & Steamed Potato (Slow Cooked Beef Tongue, Red Wine Sauce)",House Specials,Butter_g,10,g,Assumed standard recipe for simulation
+F-029,"French Stew & Steamed Potato (Slow Cooked Beef Tongue, Red Wine Sauce)",House Specials,SauceOther_g,120,g,Assumed standard recipe for simulation
+F-030,"Fry'kin Platter (Wings, Samosa, Spring Rolls, Bayarkyaw, Corn Tempura)",House Specials,Chicken_g,250,g,Assumed standard recipe for simulation
+F-030,"Fry'kin Platter (Wings, Samosa, Spring Rolls, Bayarkyaw, Corn Tempura)",House Specials,Potato_g,250,g,Assumed standard recipe for simulation
+F-030,"Fry'kin Platter (Wings, Samosa, Spring Rolls, Bayarkyaw, Corn Tempura)",House Specials,Flour_g,40,g,Assumed standard recipe for simulation
+F-030,"Fry'kin Platter (Wings, Samosa, Spring Rolls, Bayarkyaw, Corn Tempura)",House Specials,CookingOil_g,60,g,Assumed standard recipe for simulation
+F-030,"Fry'kin Platter (Wings, Samosa, Spring Rolls, Bayarkyaw, Corn Tempura)",House Specials,VegMix_g,100,g,Assumed standard recipe for simulation
+F-030,"Fry'kin Platter (Wings, Samosa, Spring Rolls, Bayarkyaw, Corn Tempura)",House Specials,SauceOther_g,80,g,Assumed standard recipe for simulation
+F-031,Brownie & Vanilla Ice Cream,Desserts,Flour_g,25,g,Assumed standard recipe for simulation
+F-031,Brownie & Vanilla Ice Cream,Desserts,Sugar_g,40,g,Assumed standard recipe for simulation
+F-031,Brownie & Vanilla Ice Cream,Desserts,Butter_g,30,g,Assumed standard recipe for simulation
+F-031,Brownie & Vanilla Ice Cream,Desserts,Egg_count,1,count,Assumed standard recipe for simulation
+F-031,Brownie & Vanilla Ice Cream,Desserts,Chocolate_g,15,g,Assumed standard recipe for simulation
+F-031,Brownie & Vanilla Ice Cream,Desserts,Milk_ml,60,ml,Assumed standard recipe for simulation
+F-032,Chocolate Mousse,Desserts,Cream_ml,120,ml,Assumed standard recipe for simulation
+F-032,Chocolate Mousse,Desserts,Chocolate_g,50,g,Assumed standard recipe for simulation
+F-032,Chocolate Mousse,Desserts,Sugar_g,20,g,Assumed standard recipe for simulation
+F-032,Chocolate Mousse,Desserts,Egg_count,1,count,Assumed standard recipe for simulation
+D-001,Plain Milk,Iced Milk,Milk_ml,300,ml,Assumed standard recipe for simulation
+D-002,Coca-Cola,Juice & Soft Drinks,Soda_ml,330,ml,Assumed standard recipe for simulation
+D-003,Heineken (Draught 50cl),Draught Beer,Beer_ml,500,ml,Assumed standard recipe for simulation
+D-004,Tiger (Draught 50cl),Draught Beer,Beer_ml,500,ml,Assumed standard recipe for simulation
+D-005,Heineken (Bottle),Beer Bottles,Beer_ml,330,ml,Assumed standard recipe for simulation
+D-006,Tiger Crystal (Bottle),Beer Bottles,Beer_ml,330,ml,Assumed standard recipe for simulation
+D-007,Hoegaarden (Bottle),Beer Bottles,Beer_ml,330,ml,Assumed standard recipe for simulation
+D-008,Chum-Churum Original Soju (0.36L),Soju,Soju_ml,360,ml,Assumed standard recipe for simulation
+D-010,Catena Cabernet Sauvignon (Bottle),Red Wine Bottles,Wine_ml,750,ml,Assumed standard recipe for simulation
+D-011,Jägermeister (Shot),Shots,Spirits_ml,30,ml,Assumed standard recipe for simulation
+D-012,Jack Daniel's (Glass),Spirits,Spirits_ml,45,ml,Assumed standard recipe for simulation
+D-013,Glenfiddich 12 (Glass),Spirits,Spirits_ml,45,ml,Assumed standard recipe for simulation
+D-014,Glenfiddich 15 (Glass),Spirits,Spirits_ml,45,ml,Assumed standard recipe for simulation
+D-015,Gin & Tonic,Cocktails,Spirits_ml,45,ml,Assumed standard recipe for simulation
+D-015,Gin & Tonic,Cocktails,Soda_ml,150,ml,Assumed standard recipe for simulation
+D-015,Gin & Tonic,Cocktails,Lime_g,20,g,Assumed standard recipe for simulation
+D-016,Whisky Sour,Cocktails,Spirits_ml,45,ml,Assumed standard recipe for simulation
+D-016,Whisky Sour,Cocktails,Sugar_g,10,g,Assumed standard recipe for simulation
+D-016,Whisky Sour,Cocktails,Lime_g,25,g,Assumed standard recipe for simulation
+D-016,Whisky Sour,Cocktails,Egg_count,1,count,Assumed standard recipe for simulation
+D-017,Mojito,Premium Cocktails,Spirits_ml,45,ml,Assumed standard recipe for simulation
+D-017,Mojito,Premium Cocktails,Soda_ml,120,ml,Assumed standard recipe for simulation
+D-017,Mojito,Premium Cocktails,Sugar_g,10,g,Assumed standard recipe for simulation
+D-017,Mojito,Premium Cocktails,Lime_g,25,g,Assumed standard recipe for simulation
+D-017,Mojito,Premium Cocktails,Mint_g,5,g,Assumed standard recipe for simulation
+D-018,Long Island Iced Tea,Signature Cocktails,Spirits_ml,75,ml,Assumed standard recipe for simulation
+D-018,Long Island Iced Tea,Signature Cocktails,Soda_ml,120,ml,Assumed standard recipe for simulation
+D-018,Long Island Iced Tea,Signature Cocktails,Sugar_g,10,g,Assumed standard recipe for simulation
+D-018,Long Island Iced Tea,Signature Cocktails,Lime_g,20,g,Assumed standard recipe for simulation
