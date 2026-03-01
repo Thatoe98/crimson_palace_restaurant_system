@@ -13,11 +13,11 @@ interface PosClientProps {
 
 export function PosClient({ menuItems, tables }: PosClientProps) {
   const clearOrder = usePosStore((state) => state.clearOrder)
-  const [orderResult, setOrderResult] = useState<PosOrderResult | null>(null)
+  const lastOrderResult = usePosStore((state) => state.lastOrderResult)
+  const setLastOrderResult = usePosStore((state) => state.setLastOrderResult)
 
   function handleNewOrder() {
     clearOrder()
-    setOrderResult(null)
   }
 
   return (
@@ -28,15 +28,13 @@ export function PosClient({ menuItems, tables }: PosClientProps) {
           <PosMenuPanel menuItems={menuItems} />
         </section>
         <section className="lg:col-span-2">
-          {orderResult ? (
-            <PaymentPanel result={orderResult} onNewOrder={handleNewOrder} />
+          {lastOrderResult ? (
+            <PaymentPanel result={lastOrderResult} onNewOrder={handleNewOrder} />
           ) : (
-            <PosCartPanel tables={tables} onPlaced={setOrderResult} />
+            <PosCartPanel tables={tables} onPlaced={setLastOrderResult} />
           )}
         </section>
       </div>
     </main>
   )
 }
-
-import { useState } from 'react'

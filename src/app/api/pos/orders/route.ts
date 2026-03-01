@@ -101,17 +101,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const orderId = created?.order_id ?? created?.id
     const orderNumber = created?.order_number ?? created?.orderNumber
 
-    // Immediately transition to SENT_TO_KITCHEN so it appears in kitchen
-    if (orderId) {
-      const { error: statusError } = await supabase
-        .from('CustomerOrder')
-        .update({ status: 'SENT_TO_KITCHEN' })
-        .eq('id', orderId)
-      if (statusError) {
-        console.error('[create order] Failed to update status to SENT_TO_KITCHEN:', statusError.message)
-      }
-    }
-
     return jsonData({ id: orderId, orderNumber }, 201)
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to create POS order.'

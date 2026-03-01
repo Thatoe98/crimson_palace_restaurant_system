@@ -2,64 +2,74 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/db'
 import { jsonData, jsonError } from '@/lib/api/route-helpers'
 
-interface RouteContext {
-  params: {
-    id: string
-  }
-}
-
-type KitchenItemStatus = 'IN_PREP' | 'READY' | 'SERVED'
-
-export async function PATCH(request: NextRequest, { params }: RouteContext): Promise<NextResponse> {
+export async function PATCH(
+  request: NextRequest,
+  context: { params: { id: string } | Promise<{ id: string }> }
+): Promise<NextResponse> {
   try {
-    const body = await request.json()
-    const status = body?.status as KitchenItemStatus | undefined
+    const resolvedParams = await Promise.resolve(context.params)
+    const orderId = resolvedParams.id
 
-    if (!status || !['IN_PREP', 'READY', 'SERVED'].includes(status)) {
-      return jsonError('status is required and must be IN_PREP, READY, or SERVED.', 400)
+    const body = await request.json().catch(() => ({}))
+    const newStatus = typeof body?.status === 'string' ? body.status.trim() : ''
+
+    console.log('[KITCHEN PATCH] orderId=%s newStatus=%s', orderId, newStatus)
+
+    if (!orderId) {
+      return jsonError('Missing order id', 400)
     }
 
-    const now = new Date().toISOString()
-
-    // Map kitchen status to order status
-    const orderStatusMap: Record<string, string> = {
-      IN_PREP: 'IN_PREP',
-      READY: 'READY',
-      SERVED: 'SERVED',
+    if (!['IN_PREP', 'SERVED', 'CANCELLED'].includes(newStatus)) {
+      return jsonError('status must be IN_PREP, SERVED, or CANCELLED', 400)
     }
 
-    // Update CustomerOrder status
-    const { error: orderError } = await supabase
+    const { data: existingOrder, error: selectError } = await supabase
       .from('CustomerOrder')
-      .update({ status: orderStatusMap[status] })
-      .eq('id', params.id)
+      .select('id, status')
+      .eq('id', orderId)
+      .single()
 
-    if (orderError) {
-      return jsonError(orderError.message, 500)
+    console.log('[KITCHEN PATCH] pre-check existingOrder=%j selectError=%j', existingOrder, selectError)
+
+    if (selectError || !existingOrder) {
+      const { data: sampleData, error: sampleError } = await supabase
+        .from('CustomerOrder')
+        .select('id')
+        .limit(5)
+
+      console.log('[KITCHEN PATCH] sample ids data=%j error=%j', sampleData, sampleError)
+
+      return jsonError('Order not found or update matched 0 rows', 404, {
+        receivedId: orderId,
+        sampleIds: sampleData?.map((r) => r.id) ?? [],
+        selectError: selectError?.message,
+      })
     }
 
-    // Update CustomerOrderItem kitchenStatus + timestamps
-    const itemPatch: Record<string, string> = { kitchenStatus: status }
-    if (status === 'IN_PREP') itemPatch.sentToKitchenAt = now
-    if (status === 'READY') itemPatch.readyAt = now
-    if (status === 'SERVED') itemPatch.servedAt = now
+    const { data, error } = await supabase
+      .from('CustomerOrder')
+      .update({ status: newStatus })
+      .eq('id', orderId)
+      .select('id, status')
 
-    const { error: itemError } = await supabase
-      .from('CustomerOrderItem')
-      .update(itemPatch)
-      .eq('orderId', params.id)
+    console.log('[KITCHEN PATCH] result data=%j error=%j', data, error)
 
-    if (itemError) {
-      return jsonError(itemError.message, 500)
+    if (error) {
+      return jsonError(error.message, 500)
     }
 
-    return jsonData({
-      success: true,
-      orderId: params.id,
-      status,
-    })
-  } catch (error) {
-    const message = error instanceof Error ? error.message : 'Failed to update kitchen ticket status.'
-    return jsonError(message, 500)
+    if (!data || data.length === 0) {
+      console.warn('[KITCHEN PATCH] WARNING: 0 rows updated for orderId=%s', orderId)
+      return jsonError('Order not found or update matched 0 rows', 404, {
+        receivedId: orderId,
+        sampleIds: [existingOrder.id],
+      })
+    }
+
+    return jsonData({ success: true, orderId, status: newStatus, updated: data[0] })
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Unexpected error'
+    console.error('[KITCHEN PATCH] exception:', msg)
+    return jsonError(msg, 500)
   }
 }

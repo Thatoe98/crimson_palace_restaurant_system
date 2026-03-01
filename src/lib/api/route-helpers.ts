@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { formatDate } from '@/lib/date'
 
-export function jsonError(error: string, status: number): NextResponse {
-  return NextResponse.json({ error }, { status })
+export function jsonError(error: string, status: number, debug?: unknown): NextResponse {
+  const body = debug === undefined ? { error } : { error, debug }
+  return NextResponse.json(body, { status })
 }
 
 export function jsonData<T>(data: T, status = 200): NextResponse {

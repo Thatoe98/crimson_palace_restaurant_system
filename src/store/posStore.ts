@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import type { PosOrderResult } from '@/components/pos/types'
 
 export interface PosCartItem {
   menuItemId: string
@@ -11,10 +12,12 @@ export interface PosCartItem {
 interface PosStore {
   items: PosCartItem[]
   selectedTable: string | null
+  lastOrderResult: PosOrderResult | null
   addItem: (item: Omit<PosCartItem, 'qty'>) => void
   removeItem: (menuItemId: string) => void
   updateQty: (menuItemId: string, delta: number) => void
   setTable: (tableId: string | null) => void
+  setLastOrderResult: (result: PosOrderResult | null) => void
   clearOrder: () => void
   subtotal: () => number
   itemCount: () => number
@@ -23,6 +26,7 @@ interface PosStore {
 export const usePosStore = create<PosStore>((set, get) => ({
   items: [],
   selectedTable: null,
+  lastOrderResult: null,
   addItem: (item) => {
     const existing = get().items.find((cartItem) => cartItem.menuItemId === item.menuItemId)
 
@@ -61,8 +65,11 @@ export const usePosStore = create<PosStore>((set, get) => ({
   setTable: (tableId) => {
     set({ selectedTable: tableId })
   },
+  setLastOrderResult: (result) => {
+    set({ lastOrderResult: result })
+  },
   clearOrder: () => {
-    set({ items: [], selectedTable: null })
+    set({ items: [], selectedTable: null, lastOrderResult: null })
   },
   subtotal: () => get().items.reduce((sum, item) => sum + item.qty * item.unitPriceMmk, 0),
   itemCount: () => get().items.reduce((sum, item) => sum + item.qty, 0),

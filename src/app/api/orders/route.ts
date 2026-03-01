@@ -92,17 +92,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const orderId = created?.order_id ?? created?.id
     const orderNumber = created?.order_number ?? created?.orderNumber
 
-    // Immediately transition to SENT_TO_KITCHEN so it appears in kitchen
-    if (orderId) {
-      const { error: statusError } = await supabase
-        .from('CustomerOrder')
-        .update({ status: 'SENT_TO_KITCHEN' })
-        .eq('id', orderId)
-      if (statusError) {
-        console.error('[create order] Failed to update status to SENT_TO_KITCHEN:', statusError.message)
-      }
-    }
-
     return jsonData({ id: orderId, orderNumber }, 201)
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to create order.'
@@ -129,7 +118,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     let query = supabase
       .from('CustomerOrder')
-      .select('*, table:DiningTable(*), items:CustomerOrderItem(*, menuItem:MenuItem(*))')
+      .select('id, orderNumber, tableId, source, status, orderedAt, subtotalMmk, serviceChargeMmk, taxMmk, totalMmk, notes, table:DiningTable(*), items:CustomerOrderItem(id, qty, kitchenStatus, notes, unitPriceMmk, lineTotalMmk, menuItem:MenuItem(id, name, salesPriceMmk, supplierCostMmk, targetCostPct))')
 
     if (statusParam) query = query.eq('status', statusParam)
     if (tableId) query = query.eq('tableId', tableId)
