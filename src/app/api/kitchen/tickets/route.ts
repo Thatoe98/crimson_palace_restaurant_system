@@ -42,24 +42,29 @@ export async function GET(_request: NextRequest): Promise<NextResponse> {
       }[]
     } => {
       const elapsedMinutes = Math.floor((Date.now() - new Date(order.orderedAt).getTime()) / 60000)
+      const table = Array.isArray(order.table) ? order.table[0] : order.table
 
       return {
         id: String(order.id),
         orderNumber: String(order.orderNumber),
         tableId: String(order.tableId),
-        tableLabel: String(order.table?.label ?? order.tableId ?? ''),
+        tableLabel: String(table?.label ?? order.tableId ?? ''),
         status: String(order.status),
         orderedAt: String(order.orderedAt),
         elapsedMinutes,
         isOverdue: elapsedMinutes > 20,
-        items: (order.items ?? []).map((item) => ({
-          id: String(item.id),
-          menuItemId: String(item.menuItem?.id ?? ''),
-          menuItemName: String(item.menuItem?.name ?? ''),
+        items: (order.items ?? []).map((item) => {
+          const menuItem = Array.isArray(item.menuItem) ? item.menuItem[0] : item.menuItem
+
+          return {
+            id: String(item.id),
+            menuItemId: String(menuItem?.id ?? ''),
+            menuItemName: String(menuItem?.name ?? ''),
           qty: toNumber(Number(item.qty ?? 0)),
           notes: item.notes ?? null,
           kitchenStatus: String(item.kitchenStatus ?? ''),
-        })),
+          }
+        }),
       }
     })
 

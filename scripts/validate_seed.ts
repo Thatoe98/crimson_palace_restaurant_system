@@ -1,10 +1,12 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  'https://gdyjuoygyxgiwvplkekj.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkeWp1b3lneXhnaXd2cGxrZWtqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MTQxMzAxMCwiZXhwIjoyMDg2OTg5MDEwfQ.OQg-S0cdaHrzyZSin02F3qlXO0xg7B47Ruhj7zmpikA',
-  { auth: { persistSession: false } }
-)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!supabaseUrl || !supabaseKey) {
+  console.error('Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY environment variables')
+  process.exit(1)
+}
+const supabase = createClient(supabaseUrl, supabaseKey, { auth: { persistSession: false } })
 
 type CheckResult = {
   name: string

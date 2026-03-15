@@ -62,7 +62,7 @@ export async function GET(_request: NextRequest): Promise<NextResponse> {
       .filter((alert) => toNumber(alert.closingOnHand) < toNumber(alert.reorderPoint) * 0.5)
       .map((alert) => ({
         ingredientId: alert.ingredientId,
-        ingredientUom: alert.ingredient?.uomCode ?? '',
+        ingredientUom: (Array.isArray(alert.ingredient) ? alert.ingredient[0]?.uomCode : (alert.ingredient as any)?.uomCode) ?? '',
         closingOnHand: toNumber(alert.closingOnHand),
         reorderPoint: toNumber(alert.reorderPoint),
         actions: (alert.actions ?? []).map((entry) => entry.action),

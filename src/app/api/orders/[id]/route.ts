@@ -28,7 +28,7 @@ export async function GET(_request: NextRequest, { params }: RouteContext): Prom
       serviceChargeMmk: toNumber(Number(order.serviceChargeMmk)),
       taxMmk: toNumber(Number(order.taxMmk)),
       totalMmk: toNumber(Number(order.totalMmk)),
-      items: (order.items ?? []).map((item) => ({
+      items: (order.items ?? []).map((item: any) => ({
         ...item,
         qty: toNumber(Number(item.qty)),
         unitPriceMmk: toNumber(Number(item.unitPriceMmk)),

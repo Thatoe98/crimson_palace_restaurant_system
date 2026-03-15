@@ -67,7 +67,7 @@ export async function PATCH(request: NextRequest, { params }: RouteContext): Pro
       serviceChargeMmk: toNumber(Number(updated.serviceChargeMmk)),
       taxMmk: toNumber(Number(updated.taxMmk)),
       totalMmk: toNumber(Number(updated.totalMmk)),
-      items: (updated.items ?? []).map((item) => ({
+      items: (updated.items ?? []).map((item: any) => ({
         ...item,
         qty: toNumber(Number(item.qty)),
         unitPriceMmk: toNumber(Number(item.unitPriceMmk)),

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, UtensilsCrossed, Monitor, ChefHat, Package, QrCode, LogOut } from "lucide-react";
+import { Armchair, LayoutDashboard, UtensilsCrossed, Monitor, ChefHat, Package, QrCode, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -10,6 +10,7 @@ const links = [
   { name: "QR Codes", href: "/admin/qr", icon: QrCode },
   { name: "POS", href: "/pos", icon: Monitor },
   { name: "Kitchen", href: "/kitchen", icon: ChefHat },
+  { name: "Tables", href: "/tables", icon: Armchair },
   { name: "Inventory", href: "/inventory", icon: Package },
 ];
 

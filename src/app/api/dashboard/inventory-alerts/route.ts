@@ -73,7 +73,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       return {
         date: typeof alert.businessDate === 'string' ? alert.businessDate : '',
         ingredientId: alert.ingredientId,
-        ingredientUom: alert.ingredient?.uomCode ?? '',
+        ingredientUom: (Array.isArray(alert.ingredient) ? alert.ingredient[0]?.uomCode : (alert.ingredient as any)?.uomCode) ?? '',
         closingOnHand: toNumber(alert.closingOnHand),
         reorderPoint: toNumber(alert.reorderPoint),
         actions,

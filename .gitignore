@@ -36,3 +36,11 @@ next-env.d.ts
 
 # prisma
 prisma/migrations/*/migration_lock.toml
+
+# seed / source data files (not needed for Vercel deployment)
+*.csv
+*.xlsx
+tmp_requested_file_dump.txt
+
+# local menu images (root-level source assets, not public/ served images)
+menu-images/

@@ -49,17 +49,24 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       return jsonError(error.message, 500)
     }
 
-    const data = (rows ?? []).map((row) => ({
-      date: typeof row.businessDate === 'string' ? row.businessDate : '',
-      ingredientId: row.ingredientId,
-      category: row.ingredient?.category?.name ?? '',
-      uomCode: row.uomCode ?? row.ingredient?.uomCode ?? '',
-      closingOnHand: toNumber(row.closingOnHand),
-      reorderPoint: toNumber(row.reorderPoint),
-      reorderFlag: Boolean(row.reorderFlag),
-      expiryFlag: Boolean(row.expiryFlag),
-      suggestedActionRaw: row.suggestedActionRaw ?? null,
-    }))
+    const data = (rows ?? []).map((row) => {
+      const ingredient = Array.isArray(row.ingredient) ? row.ingredient[0] : row.ingredient
+      const category = Array.isArray((ingredient as any)?.category)
+        ? (ingredient as any).category[0]
+        : (ingredient as any)?.category
+
+      return {
+        date: typeof row.businessDate === 'string' ? row.businessDate : '',
+        ingredientId: row.ingredientId,
+        category: category?.name ?? '',
+        uomCode: row.uomCode ?? (ingredient as any)?.uomCode ?? '',
+        closingOnHand: toNumber(row.closingOnHand),
+        reorderPoint: toNumber(row.reorderPoint),
+        reorderFlag: Boolean(row.reorderFlag),
+        expiryFlag: Boolean(row.expiryFlag),
+        suggestedActionRaw: row.suggestedActionRaw ?? null,
+      }
+    })
 
     return jsonData(data)
   } catch (error) {

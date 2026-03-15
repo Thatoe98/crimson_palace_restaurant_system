@@ -141,18 +141,22 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       serviceChargeMmk: toNumber(Number(order.serviceChargeMmk)),
       taxMmk: toNumber(Number(order.taxMmk)),
       totalMmk: toNumber(Number(order.totalMmk)),
-      items: (order.items ?? []).map((item) => ({
-        ...item,
-        qty: toNumber(Number(item.qty)),
-        unitPriceMmk: toNumber(Number(item.unitPriceMmk)),
-        lineTotalMmk: toNumber(Number(item.lineTotalMmk)),
-        menuItem: {
-          ...item.menuItem,
-          salesPriceMmk: toNumber(Number(item.menuItem.salesPriceMmk)),
-          supplierCostMmk: toNumber(Number(item.menuItem.supplierCostMmk)),
-          targetCostPct: item.menuItem.targetCostPct == null ? null : toNumber(Number(item.menuItem.targetCostPct)),
-        },
-      })),
+      items: (order.items ?? []).map((item) => {
+        const menuItem = Array.isArray(item.menuItem) ? item.menuItem[0] : item.menuItem
+
+        return {
+          ...item,
+          qty: toNumber(Number(item.qty)),
+          unitPriceMmk: toNumber(Number(item.unitPriceMmk)),
+          lineTotalMmk: toNumber(Number(item.lineTotalMmk)),
+          menuItem: {
+            ...menuItem,
+            salesPriceMmk: toNumber(Number(menuItem?.salesPriceMmk)),
+            supplierCostMmk: toNumber(Number(menuItem?.supplierCostMmk)),
+            targetCostPct: menuItem?.targetCostPct == null ? null : toNumber(Number(menuItem.targetCostPct)),
+          },
+        }
+      }),
     }))
 
     return jsonData(data)
